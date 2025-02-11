@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('http://netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+@import '../node_modules/angular-notifier/styles.css';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+
+.container-x1 {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.table-title {
+    background: #343a40;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.btn {
+    border-radius: 20px;
+    font-weight: bold;
+    
+}
+
+.table {
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.badge-success {
+    background-color: #28a745 !important;
+}
+
+.badge-danger {
+    background-color: #dc3545 !important;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.spinner-broder {
+    width: 2rem;
+    height: 2rem;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+.modal-footer .btn {
+    min-width: 100px;
+}
