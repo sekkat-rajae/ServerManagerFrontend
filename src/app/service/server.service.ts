@@ -10,7 +10,6 @@ import { Status } from '../enum/status.enum';
 })
 export class ServerService {
   private readonly apiUrl= 'http://localhost:8080';
-  
   constructor(private http: HttpClient) { }
   
   /* here we created an observable called server that captured 
@@ -18,12 +17,14 @@ export class ServerService {
   */
   servers$ = <Observable<CostumResponse>>
   this.http.get<CostumResponse>(`${this.apiUrl}/server/list`)
+  /*The pipe method is used to process the response before it reaches subscribers*/
   .pipe(
     tap(console.log),
     catchError(this.handleError)
   );
 
   save$ = (server:Server) => <Observable<CostumResponse>>
+  /* The expected response type is CostumResponse.*/
   this.http.post<CostumResponse>(`${this.apiUrl}/server/save`, server)
   .pipe(
     tap(console.log),
@@ -42,7 +43,7 @@ export class ServerService {
       const filteredServers = status === Status.ALL 
         ? response.data.servers 
         : response.data.servers.filter(server => server.status === status);
-  
+      /* sends a new CostumResponse*/
       subscriber.next({
         ...response,
         data: { servers: filteredServers },
